@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Proj C-LATEST</title>
+  </head>
+
+  <body onload="main()">
+    <canvas id="webgl" width="600" height="600">
+    Please use a browser that supports "canvas"
+    </canvas>
+    <p>
+
+      <br>
+      <select id="lightStatus" onchange="Light(this)">
+        <option value="lights on">lights on</option>
+        <option value="lights off">lights off</option>
+      </select>
+      <select id="shadingmethod" onchange="Shadecontrol(this)">
+        <option value="Gouraud Shading">Gouraud Shading</option>
+        <option value="phong shading">phong shading</option>
+      </select>
+      <select id="lightingmethod" onchange="Lightingcontrol(this)">
+        <option value="Phong lighting">Phong lighting</option>
+        <option value="Blinn-Phong lighting">Blinn-Phong lighting</option>
+      </select>
+      <br>
+      Press M or m to change phong material for the ball in the center
+      <br>
+      	Please use arrow key ↑↓←→ to aim the camera in any direction without changing position <br>
+	Please use 'w' and 's' for zoom in and zomm out, and use 'a' and 'd' for 'strafe' left and right <br>
+  Shape distortion occurs on the blue balls on the left
+      <div class="slidecontainer">
+        light position X:
+        <input type="range" min="-10" max="10" value="0" class="slider" id="lightposx">
+        Y:
+        <input type="range" min="-10" max="10" value="0" class="slider" id="lightposy">
+        Z:
+        <input type="range" min="-10" max="10" value="5" class="slider" id="lightposz">
+        <br>
+        ambient&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspR:
+        <input type="range" min="1" max="100" value="50" class="slider" id="ambientR">
+        G:
+        <input type="range" min="1" max="100" value="50" class="slider" id="ambientG">
+        B:
+        <input type="range" min="1" max="100" value="50" class="slider" id="ambientB">
+        <br>
+        diffuse&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspR:
+        <input type="range" min="1" max="100" value="50" class="slider" id="diffuseR">
+        G:
+        <input type="range" min="1" max="100" value="50" class="slider" id="diffuseG">
+        B:
+        <input type="range" min="1" max="100" value="50" class="slider" id="diffuseB"> 
+        <br>
+        specular&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspR:
+        <input type="range" min="1" max="100" value="50" class="slider" id="specularR">
+        G:
+        <input type="range" min="1" max="100" value="50" class="slider" id="specularG">
+        B:
+        <input type="range" min="1" max="100" value="50" class="slider" id="specularB"> 
+      </div>
+    </p>
+    <button type="button" onclick="ATT0()">ATT=1</button>
+    <button type="button" onclick="ATT1()">ATT=1/d</button>
+    <button type="button" onclick="ATT2()">ATT=1/d^2</button>
+
+    <script src="lib/webgl-utils.js"></script>
+    <script src="lib/webgl-debug.js"></script>
+    <script src="lib/cuon-utils.js"></script>
+    <script src="lib/cuon-matrix-quat03.js"></script>
+    <script src="lib/materials_Ayerdi04.js"></script>
+		<script src="lib/lights-JT.js"></script>
+<!-- YOU SHOULD UPGRADE to Brandon Jones' far-faster, 
+      far more complete vector/matrix/quaternion library: (Google it!)
+		<script src="../lib/glmatrix.js"></script>
+--> 
+	<script src="JT_VBObox-Lib.js"></script>
+    <script src="ZhuoruZhang_ProjC.js"></script>
+  </body>
+</html>

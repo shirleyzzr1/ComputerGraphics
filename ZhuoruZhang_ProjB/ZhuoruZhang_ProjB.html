@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Basic ShapesCAM</title>
+  </head>
+	<!--	Create the HTML5 'canvas' element in which we will run WebGL
+	-->
+  <body onload="main()">
+    <canvas id="webgl" width="600" height="600">
+
+
+    </canvas>
+	<p>
+	<!-- Make a 'div' element to hold changeable HTML made in our JavaScript file;
+		 (where? look inside main(), inside its 'tick()' function, where we
+		 display the 'current angle' value.
+	-->
+	<div id= ShapeName></div> 
+	<!-- Fill this HTML tag with JavaScript-generated text that names the shape displayed
+	To change shapes, users press the 'Next' button, which calls the 'nextShape()' function-->
+	Please use arrow key ↑↓←→ to aim the camera in any direction without changing position <br>
+	Please use 'w' and 's' for zoom in and zomm out, and use 'a' and 'd' for 'strafe' left and right <br>
+	Rotate the triangular pyramid to see the effect of mouse-drag<br> 
+
+      <!-- <button type="button" onclick="spinDown()">Spin << </button> -->
+	  <button type="button" onclick="runStop()">Run/Stop</button>
+      <!-- <button type="button" onclick="spinUp()">Spin >> </button> -->
+    </p>
+	<!--	Load in the JavaScript libraries supplied by our textbook 
+			(Matsuda et al., 2013 WebGL Programming Guide) that help us
+			with WebGL programming:
+	-->
+    <script src="lib/webgl-utils.js"></script>
+    <script src="lib/webgl-debug.js"></script>
+    <script src="lib/cuon-utils.js"></script>
+    <script src="lib/cuon-matrix-quat03.js"></script>
+	<!--	Finally, load in our own JavaScript program file.
+	-->
+    <script src="ZhuoruZhang_ProjB.js"></script>
+  </body>
+</html>
